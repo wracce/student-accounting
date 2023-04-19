@@ -1,0 +1,43 @@
+<input type="checkbox" id="group-modal" class="modal-toggle" />
+<form class="modal" [formGroup]="dashboardPageService.groupForm">
+  <div class="modal-box w-full">
+    <h3 class="font-bold text-lg">
+      {{
+        dashboardPageService.isEditGroup
+          ? "Редактирование группы"
+          : "Добавление группы"
+      }}
+    </h3>
+
+    <div class="form-control w-full">
+      <label class="label">
+        <span class="label-text">Имя:</span>
+      </label>
+      <input
+        type="text"
+        placeholder="Введите имя группы"
+        class="input input-bordered w-full"
+        formControlName="name"
+      />
+    </div>
+
+    <div class="modal-action">
+      <label for="group-modal" class="btn btn-ghost">Отмена</label>
+      <button
+        class="btn"
+        [class.btn-disabled]="
+          dashboardPageService.groupForm.invalid ||
+          dashboardPageService.groupForm.pristine
+        "
+        (click)="
+          dashboardPageService.isEditGroup
+            ? dashboardPageService.editGroup()
+            : dashboardPageService.createGroup();
+          dashboardPageService.setGroupModal(false)
+        "
+      >
+        {{ dashboardPageService.isEditGroup ? "Редактировать" : "Создать" }}
+      </button>
+    </div>
+  </div>
+</form>

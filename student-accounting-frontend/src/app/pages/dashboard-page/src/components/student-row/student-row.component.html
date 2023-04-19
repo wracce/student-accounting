@@ -1,0 +1,23 @@
+<th>{{ ind + 1 }}</th>
+<td>{{ student.name }}</td>
+<td>{{ student.birthdate | date : "dd MMMM yyyy": undefined : "ru" }}</td>
+<td>{{ student.number }}</td>
+<td *ngIf="userSessionService.isAdmin()">
+  <button class="btn btn-xs btn-square btn-ghost me-4" (click)="      dashboardPageService.selectedStudentIndex = ind;
+  dashboardPageService.selectedGroupIndex = indGroup; dashboardPageService.deleteStudent()">
+    <ng-icon name="heroXMarkSolid" class="text-error" size="24"></ng-icon>
+  </button>
+  <button
+    for="student-modal"
+    class="btn btn-xs btn-square btn-ghost"
+    (click)="
+      dashboardPageService.isEditStudent = true;
+      dashboardPageService.selectedStudentIndex = ind;
+      dashboardPageService.selectedGroupIndex = indGroup;
+      dashboardPageService.setStudentFormFromStudent(student);
+      dashboardPageService.setStudentModal(true)
+    "
+  >
+    <ng-icon name="heroPencilSolid" class="text-accent" size="20"></ng-icon>
+  </button>
+</td>

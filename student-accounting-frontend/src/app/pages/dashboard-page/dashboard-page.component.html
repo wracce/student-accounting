@@ -1,0 +1,26 @@
+<div class="container mx-auto lg:px-32 flex-col flex gap-5 justify-center">
+  <app-group-table
+    *ngFor="let group of dashboardPageService.groups; index as i"
+    [group]="group"
+    [ind]="i"
+  ></app-group-table>
+</div>
+
+<button
+  class="btn btn-lg btn-circle fixed bottom-5 right-5 btn-primary"
+  (click)="
+    dashboardPageService.isEditGroup = false;
+    dashboardPageService.setGroupModal(true)
+  "
+  *ngIf="userSessionService.isAdmin()"
+>
+  <ng-icon
+    name="heroFolderPlusSolid"
+    size="45"
+    class="text-primary-content"
+  ></ng-icon>
+</button>
+
+<app-student-modal></app-student-modal>
+
+<app-group-modal></app-group-modal>

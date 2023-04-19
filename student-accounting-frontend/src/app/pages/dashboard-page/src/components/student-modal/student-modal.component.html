@@ -1,0 +1,63 @@
+<input type="checkbox" id="student-modal" class="modal-toggle" />
+<form class="modal" [formGroup]="dashboardPageService.studentForm" lang="ru">
+  <div class="modal-box w-full">
+    <h3 class="font-bold text-lg">
+      {{
+        dashboardPageService.isEditStudent
+          ? "Редактирование студента"
+          : "Добавление студента"
+      }}
+    </h3>
+
+    <div class="form-control w-full">
+      <label class="label">
+        <span class="label-text">ФИО:</span>
+      </label>
+      <input
+        type="text"
+        placeholder="Введите ФИО"
+        class="input input-bordered w-full"
+        formControlName="name"
+      />
+    </div>
+
+    <div class="form-control w-full">
+      <label class="label">
+        <span class="label-text">Дата:</span>
+      </label>
+      <input type="date" class="input input-bordered w-full" formControlName="birthdate" lang="ru-RU"/>
+    </div>
+
+    <div class="form-control w-full">
+      <label class="label">
+        <span class="label-text">Номер:</span>
+      </label>
+      <input
+        type="number"
+        placeholder="Введите число"
+        class="input input-bordered w-full"
+        formControlName="number"
+      />
+    </div>
+
+    <div class="modal-action">
+      <label for="student-modal" class="btn btn-ghost">Отмена</label>
+      <button
+        class="btn"
+        [class.btn-disabled]="
+          dashboardPageService.studentForm.invalid ||
+          dashboardPageService.studentForm.pristine
+        "
+        (click)="
+          dashboardPageService.isEditStudent
+            ? dashboardPageService.editStudent()
+            : dashboardPageService.AddStudent();
+          dashboardPageService.setStudentModal(false)
+        "
+
+      >
+        {{ dashboardPageService.isEditStudent ? "Редактировать" : "Добавить" }}
+      </button>
+    </div>
+  </div>
+</form>

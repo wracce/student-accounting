@@ -1,0 +1,22 @@
+<div class="navbar w-full shadow-lg justify-between flex">
+  <a class="btn btn-square btn-ghost normal-case drawer-button"
+    ><ng-icon
+      [name]="themeService.isDark ? 'heroSunSolid' : 'heroMoonSolid'"
+      class="h-7"
+      size="40"
+      (click)="themeService.changeDark()"
+    ></ng-icon>
+  </a>
+  <input
+    type="text"
+    placeholder="Поиск по студентам..."
+    class="input input-bordered w-80"
+    [(ngModel)]="searchService.search"
+    [class.bg-success]="searchService.search.trim() != ''"
+    *ngIf="userSessionService.isLoggedIn"
+  />
+
+  <button class="btn btn-outline" *ngIf="userSessionService.isLoggedIn" (click)="userSessionService.logout()">
+    Выйти
+  </button>
+</div>
