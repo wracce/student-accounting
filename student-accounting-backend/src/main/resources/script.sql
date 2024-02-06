@@ -1,3 +1,4 @@
+-- Active: 1696233158517@@127.0.0.1@5432@postgres
 CREATE TABLE IF NOT EXISTS public.students
 (
     id bigint NOT NULL DEFAULT nextval('students_id_seq'::regclass),
