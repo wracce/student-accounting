@@ -26,7 +26,7 @@
 </p>
 
  ## Попробовать
-[WEB](https://wracce.github.io/pytnawko)
+[Relase WIN x64](https://github.com/wracce/student-accounting/releases/tag/v0.0.1)
 
 Для запуска:
 ```bash
