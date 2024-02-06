@@ -1,63 +1,89 @@
 # Учет студентов
-
- Простое
-
+ CRUD приложение учета студентов в университете с возможностью поиска и аутенентификацией.
 <p align="center">
-  [localhost_8080_](https://github.com/wracce/student-accounting/assets/61648977/4c1dfdf2-26e1-46e3-8384-0468f90d2e93)
-![ezgif-1-2d302b962c](https://github.com/wracce/student-accounting/assets/61648977/f3facd41-0e61-4065-bca5-ccae47223935)
-![localhost_8080_dashboard](https://github.com/wracce/student-accounting/assets/61648977/9f001da4-2b3a-4363-95a7-60675d0e0349)
-![localhost_8080_dashboard (2)](https://github.com/wracce/student-accounting/assets/61648977/d35cc96e-be25-4c30-a72f-702a428e513b)
-    <img width="50%" src="assets/61648977/4c1dfdf2-26e1-46e3-8384-0468f90d2e93" />
-    <img width="50%" src="public/assets/61648977/f3facd41-0e61-4065-bca5-ccae47223935" />
-    <img width="50%" src="public/assets/61648977/9f001da4-2b3a-4363-95a7-60675d0e0349" />
-    <img width="50%" src="public/assets/61648977/d35cc96e-be25-4c30-a72f-702a428e513b" />
+<img width="49%" src="assets/example.gif" />
+</p>
+
+## Возможности
+⚡ Создание/Редактирование/Удаление групп
+
+⚡ Создание/Редактирование/Удаление студентов
+
+⚡ Поиск по группам и студентам
+
+⚡ Аутенентификация и Регистрация пользователей
+
+⚡ 2 роли: Администратор и пользователь
+
+⚡ Темная/Светлая тема
+
+ ## Скриншоты
+<p align="center">
+    <img width="49%" src="assets/edit-table.png" />
+    <img width="49%" src="assets/login.png" />
+    <img width="49%" src="assets/tables.png" />
+    <img width="49%" src="assets/dark-theme.png" />
 </p>
 
  ## Попробовать
 [WEB](https://wracce.github.io/pytnawko)
 
-## Возможности
+Для запуска:
+```bash
+java -jar study-0.0.1.jar
+```
 
-⚡ Выбор размера поля 
 
-⚡ Множественное перемещение
 
 ## Стек технологий
+Frontend:
+ * TypeScript
+ * Angular
+ * Tailwind / PostCSS / AutoPrefixer
+ * DaisyUI / Angular Icons
 
- * Vite, Yarn
- * TypeScript, Less
- * React, Airbnb style
- * Fortawesome
- * React-router-dom, use-sound, react-transition-group
- * Eslint, Prettier
- * FSD, BEM, SOLID
+ Backend: 
+ * Java
+ * Spring (Spr) / PostgreSQL
+ * Spring Boot / Spring Security / Spring WEB
+
+Методология: 
+ * Prettier
+ * BEM, SOLID
 
 ## Сборка / Запуск
 
 
 1. Установка зависимостей
 
+фронтенд:
 ```bash
 npm install
 ```
 
-2. Запуск проекта
-
+бэкэнд:
 ```bash
-npm run dev
-# или используйте yarn
-yarn dev
+mvn clean install
 ```
 
-3. Сборка проекта
+2. Сборка фронтенд части
 
 ```bash
-npm run build
-# или используйте yarn
-yarn build
+ng build
 ```
 
+3. Скопировать собранные файлы в папку static бэкэнда
+
+4. Сборка бэкэнда
+```bash
+mvn compile
+mvn package
+```
+
+5. Запуск проекта:
+```bash
+java -jar target/study-0.0.1-SNAPSHOOT.jar
+```
 
 ## Лицензия
 MIT license!
-![localhost_8080_dashboard (1)](https://github.com/wracce/student-accounting/assets/61648977/442abed6-225f-485b-9b81-af8eeaed4ead)
