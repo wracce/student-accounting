@@ -30,9 +30,9 @@
  ## Попробовать
 [JRE](https://github.com/wracce/student-accounting/releases/tag/v0.0.1)
 
-Для запуска:
+Для запуска (Поменяйте логин и пароль Postgres на свой):
 ```bash
-java -jar study-0.0.1.jar
+java -jar study-0.0.1.jar  --spring.datasource.username=postgres --spring.datasource.password=5432
 ```
 
 
