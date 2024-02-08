@@ -46,6 +46,7 @@ Frontend:
 
  Backend: 
  * Java
+ * Postgre
  * Spring (Spr) / PostgreSQL
  * Spring Boot / Spring Security / Spring WEB
 
