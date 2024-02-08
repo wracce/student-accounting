@@ -84,7 +84,7 @@ mvn package
 
 5. Запуск проекта:
 ```bash
-java -jar target/study-0.0.1-SNAPSHOOT.jar
+java -jar target/study-0.0.1-SNAPSHOOT.jar --spring.datasource.username=postgres --spring.datasource.password=5432
 ```
 
 ## Лицензия
